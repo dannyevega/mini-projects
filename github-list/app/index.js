@@ -16,11 +16,22 @@ const FileList = ({ files }) => {
   )
 }
 
+FileList.propTypes = {
+  files: PropTypes.array
+};
+
 const FileListItem = ({ file }) => {
   return (
     <tr className="file-list-item">
-      <FileName file={file} />
-      <CommitMessage commit={file.latestCommit} />
+      <td className="file-icon">
+        <FileIcon file={file} />
+      </td>
+      <td className="file-name">
+        <FileName file={file} />
+      </td>
+      <td className="commit-message">
+        <CommitMessage commit={file.latestCommit} />
+      </td>
       <td className="age">
         <Time time={file.updated_at} />
       </td>
@@ -28,22 +39,29 @@ const FileListItem = ({ file }) => {
   )
 }
 
+FileListItem.propTypes = {
+  file: PropTypes.object.isRequired
+};
+
 const CommitMessage = ({ commit }) => {
   return (
-    <td className="commit-message">
-      {commit.message}
-    </td>
+    <span>{commit.message}</span>
   )
 }
 
+CommitMessage.propTypes = {
+  commit: PropTypes.object.isRequired
+};
+
 function FileName ({ file }) {
   return (
-    <>
-      <FileIcon file={file} />
-      <td className="file-name">{file.name}</td>
-    </>
+    <span>{file.name}</span>
   )
 }
+
+FileName.propTypes = {
+  file: PropTypes.object.isRequired
+};
 
 function FileIcon ({ file }) {
   let icon = 'fa-file-text-o';
@@ -52,11 +70,13 @@ function FileIcon ({ file }) {
   }
 
   return (
-    <td className="file-icon">
-      <i className={`fa ${icon}`}/>
-    </td>
+    <i className={`fa ${icon}`}/>
   )
 }
+
+FileIcon.propTypes = {
+  file: PropTypes.object.isRequired
+};
 
 const testFiles = [
   {
@@ -87,26 +107,6 @@ const testFiles = [
     }
   }
 ];
-
-FileList.propTypes = {
-  files: PropTypes.array
-};
-
-FileListItem.propTypes = {
-  file: PropTypes.object.isRequired
-};
-
-FileName.propTypes = {
-  file: PropTypes.object.isRequired
-};
-
-FileIcon.propTypes = {
-  file: PropTypes.object.isRequired
-};
-
-CommitMessage.propTypes = {
-  commit: PropTypes.object.isRequired
-};
 
 ReactDOM.render(
   <FileList files={testFiles} />,
