@@ -1,6 +1,7 @@
 .tweet {
   border: 1px solid #ccc;
-  width: 564px;
+  max-width: 564px;
+  margin: 0 auto;
   min-height: 68px;
   padding: 10px;
   display: flex;
@@ -55,4 +56,9 @@
   font-size: 13px;
   margin-left: 6px;
   font-weight: bold;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }

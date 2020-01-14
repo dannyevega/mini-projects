@@ -1,19 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import moment from 'moment';
+import Tweets from './Tweets';
 import './index.css';
-
-const tweetObj = {
-  message: "This message is less than 140 characters.",
-  gravatar: "nothing",
-  author: {
-    handle: "@dannyevega",
-    name: "Danny Vega"
-  },
-  likes: 2,
-  retweets: 1,
-  timestamp: "2016-07-30 21:24:37"
-};
 
 function Avatar({ hash }) {
   const url = `https://www.gravatar.com/avatar/${hash}`;
@@ -81,26 +70,30 @@ const MoreOptionsButton = () => (
   <i className="fa fa-ellipsis-h more-options-button"/>
 );
 
-function Tweet({ tweet }) {
+function Tweet({ tweets }) {
   return (
-    <div className="tweet">
-      <Avatar hash={tweet.gravatar} />
-      <div className="content">
-        <Author author={tweet.author} />
-        <Time time={tweet.timestamp} />
-        <Message msg={tweet.message} />
-        <div className="buttons">
-          <ReplyButton/>
-          <RetweetButton count={tweet.retweets}/>
-          <LikeButton count={tweet.likes}/>
-          <MoreOptionsButton/>
+    <div className="container">
+      {tweets.map(tweet => (
+        <div className="tweet">
+          <Avatar hash={tweet.gravatar} />
+          <div className="content">
+            <Author author={tweet.author} />
+            <Time time={tweet.timestamp} />
+            <Message msg={tweet.message} />
+            <div className="buttons">
+              <ReplyButton/>
+              <RetweetButton count={tweet.retweets}/>
+              <LikeButton count={tweet.likes}/>
+              <MoreOptionsButton/>
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
   )
 }
 
 ReactDOM.render(
-  <Tweet tweet={tweetObj} />,
+  <Tweet tweets={Tweets} />,
   document.getElementById('root')
 )
