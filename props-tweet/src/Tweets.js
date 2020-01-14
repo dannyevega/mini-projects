@@ -19,7 +19,7 @@ const Tweets = [
     },
     likes: 2,
     retweets: 1,
-    timestamp: "2016-07-30 21:24:37"
+    timestamp: "2016-07-30 21:21:37"
   },
   {
     message: "This message is less than 140 characters.",
@@ -30,7 +30,7 @@ const Tweets = [
     },
     likes: 2,
     retweets: 1,
-    timestamp: "2016-07-30 21:24:37"
+    timestamp: "2016-07-30 20:24:37"
   }
 ]
 

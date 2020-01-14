@@ -74,7 +74,7 @@ function Tweet({ tweets }) {
   return (
     <div className="container">
       {tweets.map(tweet => (
-        <div className="tweet">
+        <div className="tweet" key={tweet.timestamp}>
           <Avatar hash={tweet.gravatar} />
           <div className="content">
             <Author author={tweet.author} />
