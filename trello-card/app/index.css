@@ -1,0 +1,71 @@
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+}
+
+.trello-card,
+.card-item {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trello-card {
+  max-width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-item {
+  background-color: #FFF;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.card-item:nth-child(6){
+  margin-bottom: 0;
+}
+
+.cards {
+  flex-grow: 2;
+}
+
+.main {
+  display: flex;
+}
+
+.main i {
+  color: darkgrey;
+}
+
+.header,
+.add {
+  flex-grow: 1;
+}
+
+.header {
+  margin-bottom: 12px;
+  font-weight: bolder;
+  color: grey;
+}
+
+.add {
+  margin-top: 16px;
+  color: darkgrey;
+}
