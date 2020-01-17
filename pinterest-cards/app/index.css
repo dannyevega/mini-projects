@@ -1,0 +1,88 @@
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+  background-color: darkgrey;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  max-width: 300px;
+  height: 400px;
+  background-color: #FFF;
+  border-radius: 5px;
+  box-shadow: 2px 2px grey;
+  padding: 12px;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #3D3D3D;
+}
+
+.card h2 {
+  font-size: 18px;
+  color: #6F6F6F;
+  margin: 12px 0;
+}
+
+.main-image {
+  position: relative;
+}
+
+.main-image img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.pins {
+  position: absolute;
+  bottom: 6px;
+  left: 4px;
+  color: #FFF;
+  background: rgba(46, 49, 49, .5);
+  font-size: 13px;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+.pins i {
+  margin-right: 6px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumbnails img {
+  width: 32%;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 3px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+}
